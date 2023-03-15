@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>      
+        <meta charset="utf-8" />
+        <meta name="description" content="Jiecheng's personal portfolio site" />
+	    <meta name="author" content="Jiecheng Chen" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Jiecheng's portfolio</title>
+        <link href="styles/methodtest.css" rel="stylesheet"  type="text/css"/>
+        <link href="images/favicon.ico" rel="icon">
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-E2GLF40LL3"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-E2GLF40LL3');
+        </script>
+    </head>
+
+    <body>
+        <div class="iconNav">        
+            <a href="./index.html" style="text-decoration: none;">
+                <div class="siteIcon">J</div>
+            </a>
+            
+            <nav aria-label="main" class="navBar">
+                <ul>
+                    <li><a href="index.html" id="homeNav">Home</a></li>
+                    <li><a href="works.html">Works</a>
+                        <div class="dropdown-content">
+                            <a href="websites.html">Webites</a><br/>
+                            <a href="ui.html" id="uiLink">UI</a><br/>
+                            <a href="art.html" id="artLink">Art</a>
+                        </div>
+                    </li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="methodtest.html">Method</a></li>
+                    <li><a href="webcomponent.html">Compoent</a></li>
+                </ul>
+            </nav>
+
+            <input type="checkbox" class="menuCheck">
+            <div class="hamburger">
+                <span class="line" id="line1"></span>
+                <span class="line" id="line2"></span>
+            </div>
+            <nav aria-label="phoneNav" class="phoneNav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="works.html">Works</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="methodtest.html">Method</a></li>
+                    <li><a href="webcomponent.html">Compoent</a></li>
+                    <li>
+                        <div>
+                            <a href="websites.html">Webites</a><br/>
+                            <a href="ui.html">UI</a><br/>
+                            <a href="art.html">Art</a>
+                        </div>
+                    </li>   
+                </ul>
+            </nav>
+        </div>
+
+        <main>
+            <form id="myForm" method="get">  
+                <label for="id">Record ID</label>
+                <input type="text" name="id" id="id">
+                <br>
+                <label for="article_name">Article Name</label>
+                <input type="text" name="article_name" id="article_name">
+                <br>
+                <label for="article_body" >Article Body</label>
+                <textarea name="article_body" id="article_body"></textarea>
+                <br>
+                <input type="text" name="date" id="date" style="visibility: hidden;"> 
+                <br>
+            </form>
+
+            <div>
+                <button id="postBtn">Post</button>
+                <button id="getBtn">Get</button>
+                <button id="putBtn">Put</button>
+                <button id="deleteBtn">Delete</button>    
+            </div>
+            
+
+            <br>
+            <section class="sec">
+                <h3>Out Put</h3>
+                <output id="response">
+                    <pre id="json">Empty</pre>            
+                </output>
+            </section> 
+        </main>
+        
+
+
+        <script type="module">
+            import {postRequest, getRequest, putRequest, deleteRequest} from './methodtest.js';
+            document.getElementById("postBtn").addEventListener("click", function(){postRequest();});
+            document.getElementById("getBtn").addEventListener("click", function(){getRequest();});
+            document.getElementById("putBtn").addEventListener("click", function(){putRequest();});
+            document.getElementById("deleteBtn").addEventListener("click", function(){deleteRequest();});
+        </script>
+    </body>
+</html>

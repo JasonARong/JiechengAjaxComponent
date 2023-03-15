@@ -1,0 +1,50 @@
+@import url(global.css);
+main{
+    margin-top: 15vh;
+}
+
+form, main div{
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input{
+    margin-bottom: 15px;
+}
+
+.sec{
+    width: 65.5vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+}
+
+h3{
+    margin-left: 20px;
+}
+#json{
+    width: 90%;
+    white-space: pre-wrap;      
+    white-space: -moz-pre-wrap;  
+    white-space: -pre-wrap;      
+    white-space: -o-pre-wrap;    
+    word-wrap: break-word;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button{
+    background-color: #00000000;
+    color: var(--white);
+    padding: 10px 15px;
+    border: 1px solid var(--white);
+    border-radius: 30px;
+    transition: 0.2s;
+}
+button:hover{
+    background-color: var(--white);
+    color: #000000;
+    border: 1px solid rgb(255, 255, 255);
+    
+}
